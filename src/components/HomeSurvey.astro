@@ -5,6 +5,10 @@
 // import EditionPlaceholder from '@components/EditionPlaceholder.astro'
 // import LastEdition from '@components/LastEdition.astro'
 // import { statuses } from '@helpers/constants'
+
+import LastEdition from "./LastEdition.astro";
+import Newsletter from "./Newsletter.astro";
+
 // import { getLocaleSubset } from '@helpers/translator'
 const { survey, locale, surveys } = Astro.props
 const { editions =[]} = survey
@@ -27,11 +31,14 @@ const { id } = survey
         <!-- <T locale={locale} k={`general.${id}.description`} /> -->
     </p>
 
-    <!-- {lastEdition ? <LastEdition edition={lastEdition} locale={locale}/> : <EditionPlaceholder survey={survey} locale={locale}/>} -->
+    <LastEdition></LastEdition>
 
     <div class="intro">
-        <!-- <T locale={locale} k={`general.${id}.intro`} md={true} /> -->
+        <p>El mundo de Rust podría beneficiarse de un poco de clasificar.</p>
+        <p>Este es nuestro primer intento de realizar una encuesta para identificar las tendencias actuales y futuras.</p>
+        <p>Juntos, descubramos qué librerias quieren aprender los desarrolladores a continuación, cuáles tienen las mejores calificaciones de uso y mucho más.</p>
     </div>
+    <Newsletter></Newsletter>
 
 <!-- 
     <Newsletter

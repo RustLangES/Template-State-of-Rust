@@ -1,0 +1,34 @@
+---
+import '../stylesheets/_newsletter.scss'
+
+---
+<div class="newsletter">
+    <h3 class="newsletter-heading">
+        No te pierdas la próxima encuesta
+    </h3>
+    <p class="newsletter-details">
+        Dejanos tu email y te avisaremos cuando la próxima encuesta se realice.
+    </p>
+    <div class="newsletter-form">
+        <form
+            method="post"
+        >
+            <input
+            class="newsletter-email"
+                id="field_0"
+                name="field_0"
+                type="email"
+            />
+            <input
+                type="text"
+                
+                tabindex={-1}
+                autocomplete="nope"
+                style={{ display: 'none' }}
+            />
+            <button type="submit" name="subscribe" class="newsletter-button button">
+                Notificarme
+            </button>
+        </form>
+    </div>
+</div>
