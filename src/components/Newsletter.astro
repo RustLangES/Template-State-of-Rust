@@ -1,34 +1,35 @@
 ---
-import '../stylesheets/_newsletter.scss'
 
 ---
-<div class="newsletter">
-    <h3 class="newsletter-heading">
-        No te pierdas la próxima encuesta
-    </h3>
-    <p class="newsletter-details">
-        Dejanos tu email y te avisaremos cuando la próxima encuesta se realice.
-    </p>
-    <div class="newsletter-form">
-        <form
-            method="post"
-        >
-            <input
-            class="newsletter-email"
-                id="field_0"
-                name="field_0"
-                type="email"
-            />
-            <input
-                type="text"
-                
-                tabindex={-1}
-                autocomplete="nope"
-                style={{ display: 'none' }}
-            />
-            <button type="submit" name="subscribe" class="newsletter-button button">
-                Notificarme
-            </button>
-        </form>
-    </div>
+
+<div
+  class="flex flex-col items-center justify-center gap-y-4 bg-background w-full py-4 px-6 my-4"
+>
+  <h3 class="text-2xl font-semibold">No te pierdas la próxima encuesta</h3>
+  <p class="opacity-70">
+    Dejanos tu email y te avisaremos cuando la próxima encuesta se realice.
+  </p>
+  <div class="w-full">
+    <form method="post">
+      <input
+        class="w-full bg-orange-300/30 py-2 px-2"
+        id="field_0"
+        name="field_0"
+        type="email"
+      />
+      <input
+        type="text"
+        tabindex={-1}
+        autocomplete="nope"
+        style={{ display: "none" }}
+      />
+      <button
+        type="submit"
+        name="subscribe"
+        class="border border-dashed border-primary w-full py-2 mt-2"
+      >
+        Notificarme</button
+      >
+    </form>
+  </div>
 </div>
