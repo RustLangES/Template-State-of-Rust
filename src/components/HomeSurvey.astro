@@ -8,8 +8,16 @@
 
 import LastEdition from "./LastEdition.astro";
 import Newsletter from "./Newsletter.astro";
+import uiLang from '../../public/i18n/ui.json';
 
 // import { getLocaleSubset } from '@helpers/translator'
+interface Props {
+    survey: string;
+    locale: "en";
+    surveys: string;
+    editions: String;
+};
+
 const { survey, locale, surveys } = Astro.props
 const { editions =[]} = survey
 // const allEditions = (editions)
@@ -24,21 +32,21 @@ const { id } = survey
 
 <div class="homepage">
     <h1>
-        State of Rust
+        {uiLang["index.homepage"][locale]}
         <!-- {survey.name} -->
     </h1>
     <p class="survey-description">
         <!-- <T locale={locale} k={`general.${id}.description`} /> -->
     </p>
 
-    <LastEdition></LastEdition>
+    <LastEdition locale={locale}></LastEdition>
 
     <div class="intro">
-        <p>El mundo de Rust podría beneficiarse de un poco de clasificar.</p>
-        <p>Este es nuestro primer intento de realizar una encuesta para identificar las tendencias actuales y futuras.</p>
-        <p>Juntos, descubramos qué librerias quieren aprender los desarrolladores a continuación, cuáles tienen las mejores calificaciones de uso y mucho más.</p>
+        <p>{uiLang["index.intro"][locale][0]}</p>
+        <p>{uiLang["index.intro"][locale][1]}</p>
+        <p>{uiLang["index.intro"][locale][2]}</p>
     </div>
-    <Newsletter></Newsletter>
+    <Newsletter locale={locale}></Newsletter>
 
 <!-- 
     <Newsletter

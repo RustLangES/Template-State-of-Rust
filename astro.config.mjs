@@ -5,5 +5,16 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   // integrations: [tailwind()]
-  integrations: []
+  integrations: [],
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "es", "it"],
+    fallback: {
+      es: "en",
+      it: "en",
+    },
+    routing: {
+      prefixDefaultLocale: false
+    }
+  }
 });

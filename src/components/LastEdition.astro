@@ -1,15 +1,17 @@
 ---
 const { edition, locale, survey } = Astro.props
 import { Image } from 'astro:assets';
-
 import logo from './../assets/images/Logo.png';
-
+import uiLang from '../../public/i18n/ui.json';
+interface Props {
+    locale: "en";
+};
 ---
 <section class="last-edition">
     <div class:list={['survey-edition survey-edition-last']}>
         <div class="survey-edition-card" >
                     <h4 class="survey-edition-status">
-                        Esta abierta!
+                        {uiLang["last.edition.title"][locale]}
                     </h4>
     
             <h4 class="survey-edition-year">2023</h4>
@@ -20,7 +22,7 @@ import logo from './../assets/images/Logo.png';
         </div>
         <div class="survey-edition-actions survey-open">
             <a class="button">
-                <span>Participar</span>
+                <span>{uiLang["last.edition.btn"][locale]}</span>
             </a>
         </div>
         <!-- {

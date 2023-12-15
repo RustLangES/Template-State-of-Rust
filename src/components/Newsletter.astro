@@ -1,13 +1,17 @@
 ---
+const { locale } = Astro.props
 import '../stylesheets/_newsletter.scss'
-
+import uiLang from '../../public/i18n/ui.json';
+interface Props {
+    locale: "en";
+};
 ---
 <div class="newsletter">
     <h3 class="newsletter-heading">
-        No te pierdas la próxima encuesta
+        {uiLang["index.newsletter"][locale][0]}
     </h3>
     <p class="newsletter-details">
-        Dejanos tu email y te avisaremos cuando la próxima encuesta se realice.
+        {uiLang["index.newsletter"][locale][1]}
     </p>
     <div class="newsletter-form">
         <form
@@ -27,7 +31,7 @@ import '../stylesheets/_newsletter.scss'
                 style={{ display: 'none' }}
             />
             <button type="submit" name="subscribe" class="newsletter-button button">
-                Notificarme
+                {uiLang["index.newsletter"][locale][2]}
             </button>
         </form>
     </div>

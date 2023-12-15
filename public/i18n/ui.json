@@ -1,0 +1,66 @@
+{
+    "index.homepage": {
+        "en": "State of Rust",
+        "es": "Estado de Rust",
+        "it": "Stato di Astro"
+    },
+    "index.newsletter": {
+        "en": [
+            "Don't miss the next survey", 
+            "Leave us your email and we will let you know when the next survey will be conducted.",
+            "Notify me"
+        ],
+        "es": [
+            "No te pierdas la próxima encuesta",            
+            "Dejanos tu email y te avisaremos cuando la próxima encuesta se realice.",
+            "Notificarme"
+        ],
+        "it": [
+            "Non perdete il prossimo sondaggio", 
+            "Lasciateci il vostro indirizzo e-mail e vi faremo sapere quando si svolgerà il prossimo sondaggio.",
+            "Avvisami"
+        ]
+    },
+    "index.intro": {
+        "es": [
+            "El mundo de Rust podría beneficiarse de un poco de clasificar.", 
+            "Este es nuestro primer intento de realizar una encuesta para identificar las tendencias actuales y futuras.",
+            "Juntos, descubramos qué librerias quieren aprender los desarrolladores a continuación, cuáles tienen las mejores calificaciones de uso y mucho más."
+        ],
+        "en": [
+            "The world of Rust could benefit from a little sorting.", 
+            "This is our first attempt to conduct a survey to identify current and future trends.",
+            "Together, let's find out which libraries developers want to learn next, which ones have the best usage ratings and much more."
+        ],
+        "it": [
+            "Il mondo di Rust potrebbe trarre beneficio da un po' di ordinamento.", 
+            "Questo è il nostro primo tentativo di condurre un'indagine per identificare le tendenze attuali e future.",
+            "Scopriamo insieme quali sono le librerie che gli sviluppatori vogliono imparare, quali sono quelle con i migliori indici di utilizzo e molto altro ancora."
+        ]
+    },
+    "navbar.text": {
+        "en": ["Other surveys", "Test of concept"],
+        "es": ["Otras encuestas", "Prueba de concepto"],
+        "it": ["Altre indagini", "Test di concetto"]
+    },
+    "last.edition.title": {
+        "en": "Is open!",
+        "es": "Esta abierta!",
+        "it": "È aperto!"
+    },
+    "last.edition.btn": {
+        "en": "Participate!",
+        "es": "Participar!",
+        "it": "Partecipare!"
+    },
+    "index.welcome": {
+        "en": "Welcome to Astro.",
+        "es": "Bienvenito a Astro.",
+        "it": "Benvenuto a Astro"
+    },
+    "404.text": {
+        "en": "",
+        "es": "",
+        "it": ""
+    }
+}

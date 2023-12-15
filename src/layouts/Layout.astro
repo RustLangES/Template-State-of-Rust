@@ -1,7 +1,4 @@
 ---
-interface Props {
-	title: string;
-}
 import Navbar from '../components/Navbar.astro';
 import '../stylesheets/main.scss'
 
@@ -13,10 +10,12 @@ const variables = `
         --background: #331e1f;
         --backgroundSecondary: #2a201e;
         --text: rgb(255, 246, 230);
-      }
+    }
 `
-
 const { title } = Astro.props;
+interface Props {
+	title: string;
+}
 ---
 
 <!doctype html>

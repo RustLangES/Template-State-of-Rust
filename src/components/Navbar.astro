@@ -1,10 +1,14 @@
 ---
-
+import { getLocaleByPath } from "astro:i18n";
+interface Props {
+    locale: "en";
+};
+import uiLang from '../../public/i18n/ui.json';
 ---
 <div class="other-surveys">
     <div class="other-surveys-inner">
-        Otras encuestas:
-        <a class="other-survey-link" href="/surveys/1">Prueba de concepto ❤️</a>
+        {uiLang["navbar.text"]["en"][0]}
+        <a class="other-survey-link" href="/surveys/1">{uiLang["navbar.text"]["en"][1]} ❤️</a>
     </div>
 </div>
 
