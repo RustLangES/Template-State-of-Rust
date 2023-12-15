@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import LastEdition from "./LastEdition.astro";
+import Newsletter from "./Newsletter.astro";
+import logo from "./../assets/images/LogoWithoutBackground.png";
+---
+
+<div class="homepage">
+        <Image
+            src={logo}
+            alt="Rustacean"
+            width="300"
+            class="rustacean"
+        />
+
+    <div class="intro">
+        <p>
+            Rust, conocido por su enfoque en la programación de sistemas sin
+            comprometer la seguridad, ha ganado terreno de manera constante en
+            el panorama de la programación. A medida que avanzamos hacia 2023,
+            se vislumbra un interés creciente en explorar el potencial de Rust
+            más allá de sus aplicaciones tradicionales.
+        </p>
+
+        <p>
+            Así como JavaScript evolucionó de ser un lenguaje de navegador a
+            conquistar servidores con Node.js, Rust se está considerando para
+            una gama más amplia de aplicaciones, prometiendo un equilibrio único
+            entre rendimiento y seguridad.
+        </p>
+
+        <p>
+            En este contexto, queremos conocer tu perspectiva sobre Rust. ¿Está
+            destinado a convertirse en el próximo lenguaje predilecto tanto para
+            la programación de sistemas como para el desarrollo web, siguiendo
+            los pasos de JavaScript? Participa en nuestra encuesta para
+            ayudarnos a comprender la actualidad de Rust, explorar sus
+            aplicaciones y desafíos, y vislumbrar su papel en el siempre
+            cambiante mundo de la programación. Tus aportes contribuirán a
+            descubrir los misterios del camino que Rust tomará en los próximos
+            años. ¡Acompáñanos en este viaje y descubramos juntos las
+            complejidades del presente y las promesas del futuro de Rust!
+        </p>
+    </div>
+
+    <div>
+        <a type="button" class="btn btn-primary" href="/survey">
+            <span class="i18n-message t"> Continuar encuesta</span>
+        </a>
+    </div>
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>
+
+<style lang="scss">
+    @import "../stylesheets/_breakpoints.scss";
+    @import "../stylesheets/_buttons.scss";
+
+    .intro {
+        font-size: var(--large-font);
+        margin-bottom: var(--doublespacing);
+        text-align: center;
+
+        @include small {
+            font-size: var(--medium-font);
+        }
+    }
+
+    .homepage{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>

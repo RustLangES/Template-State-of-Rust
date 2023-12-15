@@ -1,5 +1,26 @@
 @use 'sass:math';
 @import '_breakpoints.scss';
+@import 'variables';
+
+.btn {
+  border: 1px solid;
+  border-radius: 10px;
+  padding: var(--halfspacing) var(--spacing);
+  cursor: pointer;
+  &,
+    &:link,
+    &:visited {
+        color: var(--text);
+        text-decoration: none;
+        border-color:  var(--link-color);
+    }
+  &:hover {
+    border-style: solid;
+    text-decoration: none;
+    border-color: var(--hover-color);
+    color: var(--hover-color);
+  }
+}
 
 .button {
     background: none;

@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import LastEdition from "./LastEdition.astro";
+import Newsletter from "./Newsletter.astro";
+import logo from "./../assets/images/LogoWithoutBackground.png";
+---
+
+<div>
+    <h1>
+        Hola
+    </h1>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</div>
+
+<style lang="scss">
+    @import "../stylesheets/_breakpoints.scss";
+    @import "../stylesheets/_buttons.scss";
+
+    .intro {
+        font-size: var(--large-font);
+        margin-bottom: var(--doublespacing);
+        text-align: center;
+
+        @include small {
+            font-size: var(--medium-font);
+        }
+    }
+
+    .homepage{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
