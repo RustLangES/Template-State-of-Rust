@@ -1,16 +1,14 @@
 ---
-// import T from '@components/T'
 // import Newsletter from '@components/Newsletter'
 // import PastEditions from '@components/PastEditions.astro'
 // import EditionPlaceholder from '@components/EditionPlaceholder.astro'
 // import LastEdition from '@components/LastEdition.astro'
-// import { statuses } from '@helpers/constants'
 
 import LastEdition from "./LastEdition.astro";
 import Newsletter from "./Newsletter.astro";
 import uiLang from '../../public/i18n/ui.json';
 
-// import { getLocaleSubset } from '@helpers/translator'
+
 interface Props {
     survey: string;
     locale: "en";
@@ -18,90 +16,30 @@ interface Props {
     editions: String;
 };
 
-const { survey, locale, surveys } = Astro.props
-const { editions =[]} = survey
 // const allEditions = (editions)
 //     .sort((e1, e2) => e2.year - e1.year)
 //     .filter(e => [statuses.preview, statuses.open, statuses.closed].includes(e.status))
-const { id } = survey
+const { id } = survey;
 
 // const [lastEdition, ...pastEditions] = allEditions
 // const openEdition = allEditions.find(e => e.status === statuses.open)
 // const closedEditions = allEditions.filter(e => e.status === statuses.closed)
 ---
 
-<div class="homepage">
-    <h1>
-        {uiLang["index.homepage"][locale]}
-        <!-- {survey.name} -->
-    </h1>
-    <p class="survey-description">
-        <!-- <T locale={locale} k={`general.${id}.description`} /> -->
-    </p>
+<div
+  class="w-full flex flex-col items-center justify-center text-center [&>h1]:text-3xl [&>h1]:font-bold gap-y-4"
+>
+  <h1>
+    {uiLang["index.homepage"][locale]}
+  </h1>
 
-    <LastEdition locale={locale}></LastEdition>
+  <LastEdition locale={locale}></LastEdition>
 
-    <div class="intro">
-        <p>{uiLang["index.intro"][locale][0]}</p>
-        <p>{uiLang["index.intro"][locale][1]}</p>
-        <p>{uiLang["index.intro"][locale][2]}</p>
-    </div>
-    <Newsletter locale={locale}></Newsletter>
+  <div class="opacity-80 flex flex-col gap-y-5 text-lg">
+    <p>{uiLang["index.intro"][locale][0]}</p>
+    <p>{uiLang["index.intro"][locale][1]}</p>
+    <p>{uiLang["index.intro"][locale][2]}</p>
+  </div>
+  <Newsletter locale={locale}></Newsletter>
 
-<!-- 
-    <Newsletter
-        client:load
-        locale={getLocaleSubset(locale, [
-            'newsletter.stay_tuned',
-            'newsletter.leave_your_email',
-            'newsletter.email',
-            'newsletter.submit'
-        ])}
-        listId={survey.emailOctopus.listId}
-    /> -->
-
-    <!-- {
-        pastEditions && pastEditions.length > 0 && (
-            <PastEditions editions={pastEditions} locale={locale} survey={survey}/>
-        )
-    } -->
 </div>
-
-<style lang="scss">
-    @import '../stylesheets/_breakpoints.scss';
-
-    h1 {
-        font-size: var(--title-font);
-        text-align: center;
-        margin-bottom: var(--halfspacing);
-        line-height: 1;
-
-        @include small {
-            font-size: var(--largest-font);
-        }
-    }
-
-    .survey-description {
-        font-size: var(--large-font);
-        margin-bottom: var(--doublespacing);
-        text-align: center;
-        opacity: var(--secondary-opacity);
-    }
-
-    h2 {
-        font-size: var(--larger-font);
-        margin-bottom: var(--doublespacing);
-        text-align: center;
-    }
-
-    .intro {
-        font-size: var(--large-font);
-        margin-bottom: var(--doublespacing);
-        text-align: center;
-
-        @include small {
-            font-size: var(--medium-font);
-        }
-    }
-
-</style>

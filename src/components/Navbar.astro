@@ -5,36 +5,14 @@ interface Props {
 };
 import uiLang from '../../public/i18n/ui.json';
 ---
-<div class="other-surveys">
-    <div class="other-surveys-inner">
-        {uiLang["navbar.text"]["en"][0]}
-        <a class="other-survey-link" href="/surveys/1">{uiLang["navbar.text"]["en"][1]} ❤️</a>
-    </div>
-</div>
 
-<style lang="scss">
-	.other-surveys {
-	  background: var(--background);
-	  padding: var(--halfspacing) 0;
-	  text-align: center;
-	  margin-bottom: var(--spacing);
-	}
-  
-	.other-surveys-inner {
-	  width: 100%;
-	  margin: 0 auto;
-  
-	  @media screen and (max-width: 666px) {
-		font-size: var(--small-font);
-	  }
-	}
-  
-	.other-survey-link {
-	  display: inline-block;
-	  margin-left: var(--doublespacing);
-  
-	  @media screen and (max-width: 666px) {
-		margin-left: var(--halfspacing);
-	  }
-	}
-  </style>
+<div
+  class="bg-background w-full flex items-center justify-center py-3 mb-3 text-sm"
+>
+  <div class="">
+    {uiLang["navbar.text"]["en"][0]}
+    <a class="text-primary font-semibold" href="/surveys/1"
+      >{uiLang["navbar.text"]["en"][1]} ❤️</a
+    >
+  </div>
+</div>
