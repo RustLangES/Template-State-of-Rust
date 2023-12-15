@@ -1,14 +1,18 @@
 ---
-
+import { getLocaleByPath } from "astro:i18n";
+interface Props {
+    locale: "en";
+};
+import uiLang from '../../public/i18n/ui.json';
 ---
 
 <div
   class="bg-background w-full flex items-center justify-center py-3 mb-3 text-sm"
 >
   <div class="">
-    Otras encuestas:
+    {uiLang["navbar.text"]["en"][0]}
     <a class="text-primary font-semibold" href="/surveys/1"
-      >Prueba de concepto ❤️</a
+      >{uiLang["navbar.text"]["en"][1]} ❤️</a
     >
   </div>
 </div>

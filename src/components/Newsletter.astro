@@ -1,13 +1,17 @@
 ---
-
+const { locale } = Astro.props
+import uiLang from '../../public/i18n/ui.json';
+interface Props {
+    locale: "en";
+};
 ---
 
 <div
   class="flex flex-col items-center justify-center gap-y-4 bg-background w-full py-4 px-6 my-4"
 >
-  <h3 class="text-2xl font-semibold">No te pierdas la próxima encuesta</h3>
+  <h3 class="text-2xl font-semibold">{uiLang["index.newsletter"][locale][0]}</h3>
   <p class="opacity-70">
-    Dejanos tu email y te avisaremos cuando la próxima encuesta se realice.
+    {uiLang["index.newsletter"][locale][1]}
   </p>
   <div class="w-full">
     <form method="post">
@@ -28,7 +32,7 @@
         name="subscribe"
         class="border border-dashed border-primary w-full py-2 mt-2"
       >
-        Notificarme</button
+        {uiLang["index.newsletter"][locale][2]}</button
       >
     </form>
   </div>

@@ -1,8 +1,12 @@
 ---
+interface Props {
+    locale: "en";
+};
 const { edition, locale, survey } = Astro.props;
 import { Image } from "astro:assets";
+import logo from './../assets/images/Logo.png';
+import uiLang from '../../public/i18n/ui.json';
 
-import logo from "./../assets/images/Logo.png";
 ---
 
 <section class="w-full relative">
@@ -10,7 +14,7 @@ import logo from "./../assets/images/Logo.png";
     <div
       class="[&_h4]:w-fit [&_h4]:py-2 [&_h4]:px-3 [&_h4]:uppercase [&_h4]:font-semibold [&_h4]:absolute [&_h4]:top-0 [&_h4]:z-10"
     >
-      <h4 class="bg-secondary">Esta abierta!</h4>
+      <h4 class="bg-secondary">{uiLang["last.edition.title"][locale]}</h4>
 
       <h4 class="bg-primary text-black/80 right-0">2023</h4>
 
@@ -19,36 +23,7 @@ import logo from "./../assets/images/Logo.png";
       </a>
     </div>
     <a class="w-full border border-dashed border-primary block py-2 mt-6 mb-2">
-      <span class="text-lg">Participar</span>
+      <span class="text-lg">{uiLang["last.edition.btn"][locale]}</span>
     </a>
-    <!-- {
-            isOpen ? (
-                    <TakeSurvey
-                        client:load
-                        locale={getLocaleSubset(locale, ['homepage.take_survey'])}
-                        url={questionsUrl}
-                    />
-            ) : (
-                <div class="survey-edition-actions survey-closed button-group">
-                    {questionsUrl && (
-                        <a href={questionsUrl} class="button">
-                            <T
-                                locale={locale}
-                                k={isPreview ? 'homepage.preview_questions' : 'homepage.view_questions'}
-                            />
-                        </a>
-                    )}
-                    {resultsUrl && edition.resultsStatus === ResultsStatusEnum.PUBLISHED ? (
-                        <a href={resultsUrl} class="button">
-                            <T locale={locale} k="homepage.view_results" />
-                        </a>
-                    ) : (
-                        <span class="button">
-                            <T locale={locale} k="homepage.results_coming_soon" />
-                        </span>
-                    )}
-                </div>
-            )
-        } -->
   </div>
 </section>

@@ -1,17 +1,21 @@
 ---
-// import T from '@components/T'
 // import Newsletter from '@components/Newsletter'
 // import PastEditions from '@components/PastEditions.astro'
 // import EditionPlaceholder from '@components/EditionPlaceholder.astro'
 // import LastEdition from '@components/LastEdition.astro'
-// import { statuses } from '@helpers/constants'
 
 import LastEdition from "./LastEdition.astro";
 import Newsletter from "./Newsletter.astro";
+import uiLang from '../../public/i18n/ui.json';
 
-// import { getLocaleSubset } from '@helpers/translator'
-const { survey, locale, surveys } = Astro.props;
-const { editions = [] } = survey;
+
+interface Props {
+    survey: string;
+    locale: "en";
+    surveys: string;
+    editions: String;
+};
+
 // const allEditions = (editions)
 //     .sort((e1, e2) => e2.year - e1.year)
 //     .filter(e => [statuses.preview, statuses.open, statuses.closed].includes(e.status))
@@ -26,43 +30,16 @@ const { id } = survey;
   class="w-full flex flex-col items-center justify-center text-center [&>h1]:text-3xl [&>h1]:font-bold gap-y-4"
 >
   <h1>
-    State of Rust
-    <!-- {survey.name} -->
+    {uiLang["index.homepage"][locale]}
   </h1>
-  <p class="survey-description">
-    <!-- <T locale={locale} k={`general.${id}.description`} /> -->
-  </p>
 
-  <LastEdition />
+  <LastEdition locale={locale}></LastEdition>
 
   <div class="opacity-80 flex flex-col gap-y-5 text-lg">
-    <p>El mundo de Rust podría beneficiarse de un poco de clasificar.</p>
-    <p>
-      Este es nuestro primer intento de realizar una encuesta para identificar
-      las tendencias actuales y futuras.
-    </p>
-    <p>
-      Juntos, descubramos qué librerias quieren aprender los desarrolladores a
-      continuación, cuáles tienen las mejores calificaciones de uso y mucho más.
-    </p>
+    <p>{uiLang["index.intro"][locale][0]}</p>
+    <p>{uiLang["index.intro"][locale][1]}</p>
+    <p>{uiLang["index.intro"][locale][2]}</p>
   </div>
-  <Newsletter />
+  <Newsletter locale={locale}></Newsletter>
 
-  <!--
-    <Newsletter
-        client:load
-        locale={getLocaleSubset(locale, [
-            'newsletter.stay_tuned',
-            'newsletter.leave_your_email',
-            'newsletter.email',
-            'newsletter.submit'
-        ])}
-        listId={survey.emailOctopus.listId}
-    /> -->
-
-  <!-- {
-        pastEditions && pastEditions.length > 0 && (
-            <PastEditions editions={pastEditions} locale={locale} survey={survey}/>
-        )
-    } -->
 </div>
