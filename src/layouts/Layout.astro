@@ -1,110 +1,36 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
-import Navbar from '../components/Navbar.astro';
-import '../stylesheets/main.scss'
-
-
-const variables = `
-:root {
-        --primary: #fc5413;
-        --secondary: #8D4CA8;
-        --background: #331e1f;
-        --backgroundSecondary: #2a201e;
-        --text: rgb(255, 246, 230);
-      }
-`
+import Navbar from "../components/Navbar.astro";
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-		<style set:html={variables}/>
-	</head>
-	<body>
-		<Navbar></Navbar>
-		<div class="layout">
-			<div>
-				<slot />
-			</div>
-		</div>
-	</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-background-secondary text-text max-w-4xl mx-auto">
+    <Navbar />
+    <div class="px-6">
+      <div>
+        <slot />
+      </div>
+    </div>
+  </body>
 </html>
-<!-- <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style> -->
-
-
-<style lang="scss" is:global>
-	body {
-	  background: var(--backgroundSecondary);
-	  color: var(--text);
-	  font-weight: var(--medium);
-	  padding: 0;
-	  margin: 0;
-	}
-  
-	a {
-	  color: var(--primary);
-	  font-weight: var(--bold);
-	}
-  
-	a,
-	a:link,
-	a:visited,
-	a:active,
-	a:focus {
-	  color: var(--primary);
-	}
-  
-  
-	.layout {
-	  max-width: var(--layout-width);
-	  margin: 0 auto;
-  
-	  @media screen and (max-width: 666px) {
-		padding: 0 var(--spacing);
-	  }
-	}
-  </style>
